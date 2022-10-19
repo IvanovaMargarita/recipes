@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+    <nav>
+        <h1>Welcome {{car}.model}}</h1>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    <h1>Edit Recipe</h1>
+    {% with messages = get_flashed_messages(category_filter=['recipe']) %}
+        {% if messages %}
+            <bold>!!!!!</bold>
+            {% for message in messages%}
+            <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+    <input type="hidden" name="id" value="{{edit.id}}">
+
+    <label for="name ">Name</label>
+    <input type="text" name="name" value="{{edit.name}}">
+
+    <label for="description">Description:</label>
+    <input type="text" name="description" value="{{edit.description}}">
+
+    <label for="instruction">Instructions</label>
+    <input type="text" name="instruction" value="{{edit.instruction}}">
+
+    <label for="under_30">Under30?</label>
+    <input type="radio" name="uder_30" id="">
+
+    <input type="submit" value="Edit Recipe">
+<body>
+    
+</body>
+</html>
